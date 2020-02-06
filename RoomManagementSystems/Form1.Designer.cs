@@ -38,34 +38,34 @@
             this.roomClose = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.roomStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.navigateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reloadWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.navigateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informationGuideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reloadWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -86,6 +86,7 @@
             // roomView1
             // 
             this.roomView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.roomView1.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.roomView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.roomID,
             this.roomName,
@@ -144,7 +145,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.roomView1);
-
             // 
             // splitContainer1.Panel2
             // 
@@ -168,6 +168,15 @@
             this.splitContainer1.SplitterDistance = 360;
             this.splitContainer1.TabIndex = 4;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 332);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(111, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Confirm Selection";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -178,77 +187,69 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Room Viewer/Selector";
             // 
-            // label2
+            // button6
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bebas Neue Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(367, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 35);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Room Editor";
-
+            this.button6.Location = new System.Drawing.Point(726, 163);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(156, 23);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "Add New / Copy Selected";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // button5
             // 
-            this.textBox1.Location = new System.Drawing.Point(256, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 27);
-            this.textBox1.TabIndex = 5;
+            this.button5.Location = new System.Drawing.Point(3, 195);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(82, 23);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "Clear Fields";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // button4
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(78, 71);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(345, 118);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.button4.Location = new System.Drawing.Point(726, 192);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "Submit";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // button3
             // 
-            this.textBox2.Location = new System.Drawing.Point(78, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 7;
+            this.button3.Location = new System.Drawing.Point(807, 192);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // checkBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bebas Neue Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(209, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 19);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Name:";
-
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(698, 107);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(155, 23);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.Text = "Avaliable for bookings?";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // label7
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bebas Neue Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 19);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Room ID:";
-
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bebas Neue Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(465, 134);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 19);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Closing Hour:";
             // 
-            // label5
+            // textBox4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bebas Neue Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 19);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Description:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(549, 81);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 27);
-            this.textBox3.TabIndex = 11;
+            this.textBox4.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox4.Location = new System.Drawing.Point(549, 130);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 27);
+            this.textBox4.TabIndex = 13;
             // 
             // label6
             // 
@@ -260,81 +261,79 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Opening Hour:";
             // 
-            // label7
+            // textBox3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bebas Neue Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(465, 134);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 19);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Closing Hour:";
-
+            this.textBox3.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox3.Location = new System.Drawing.Point(549, 81);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 27);
+            this.textBox3.TabIndex = 11;
             // 
-            // textBox4
+            // label5
             // 
-            this.textBox4.Location = new System.Drawing.Point(549, 130);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 27);
-            this.textBox4.TabIndex = 13;
-
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bebas Neue Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 75);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 19);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Description:";
             // 
-            // checkBox1
+            // label4
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(698, 107);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(155, 23);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Avaliable for bookings?";
-            this.checkBox1.UseVisualStyleBackColor = true;
-
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bebas Neue Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(26, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 19);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Room ID:";
             // 
-            // button2
+            // label3
             // 
-            this.button2.Location = new System.Drawing.Point(3, 332);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Confirm Selection";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bebas Neue Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(209, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 19);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Name:";
             // 
-            // button3
+            // textBox2
             // 
-            this.button3.Location = new System.Drawing.Point(807, 192);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.textBox2.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox2.Location = new System.Drawing.Point(78, 38);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(125, 27);
+            this.textBox2.TabIndex = 7;
             // 
-            // button4
+            // richTextBox1
             // 
-            this.button4.Location = new System.Drawing.Point(726, 192);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "Submit";
-            this.button4.UseVisualStyleBackColor = true;
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.richTextBox1.Location = new System.Drawing.Point(78, 71);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(345, 118);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "";
             // 
-            // button5
+            // textBox1
             // 
-            this.button5.Location = new System.Drawing.Point(3, 195);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(82, 23);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Clear Fields";
-            this.button5.UseVisualStyleBackColor = true;
-
+            this.textBox1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox1.Location = new System.Drawing.Point(256, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(167, 27);
+            this.textBox1.TabIndex = 5;
             // 
-            // button6
+            // label2
             // 
-            this.button6.Location = new System.Drawing.Point(726, 163);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(156, 23);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Add New / Copy Selected";
-            this.button6.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bebas Neue Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(367, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(131, 35);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Room Editor";
             // 
             // contextMenuStrip1
             // 
@@ -362,6 +361,18 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // reloadWindowToolStripMenuItem
+            // 
+            this.reloadWindowToolStripMenuItem.Name = "reloadWindowToolStripMenuItem";
+            this.reloadWindowToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.reloadWindowToolStripMenuItem.Text = "Reload Window";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
             // navigateToolStripMenuItem
             // 
             this.navigateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -371,6 +382,18 @@
             this.navigateToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.navigateToolStripMenuItem.Text = "Navigate";
             // 
+            // mainMenuToolStripMenuItem
+            // 
+            this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
+            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.mainMenuToolStripMenuItem.Text = "Main Menu";
+            // 
+            // bookingsToolStripMenuItem
+            // 
+            this.bookingsToolStripMenuItem.Name = "bookingsToolStripMenuItem";
+            this.bookingsToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.bookingsToolStripMenuItem.Text = "Bookings";
+            // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -378,43 +401,18 @@
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.infoToolStripMenuItem.Text = "Help";
-
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // mainMenuToolStripMenuItem
-            // 
-            this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
-            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mainMenuToolStripMenuItem.Text = "Main Menu";
-            // 
-            // bookingsToolStripMenuItem
-            // 
-            this.bookingsToolStripMenuItem.Name = "bookingsToolStripMenuItem";
-            this.bookingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bookingsToolStripMenuItem.Text = "Bookings";
             // 
             // informationGuideToolStripMenuItem
             // 
             this.informationGuideToolStripMenuItem.Name = "informationGuideToolStripMenuItem";
-            this.informationGuideToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.informationGuideToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.informationGuideToolStripMenuItem.Text = "Information / Guide";
-            // 
-            // reloadWindowToolStripMenuItem
-            // 
-            this.reloadWindowToolStripMenuItem.Name = "reloadWindowToolStripMenuItem";
-            this.reloadWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reloadWindowToolStripMenuItem.Text = "Reload Window";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(903, 615);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.splitContainer1);
