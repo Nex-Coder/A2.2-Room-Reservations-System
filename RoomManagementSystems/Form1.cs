@@ -13,7 +13,6 @@ namespace RoomManagementSystem
 {
     public partial class Form1 : Form
     {
-        // TODO modify the project to follow Encapsulation and thereafter be a Multiclass program (Seperate into librarys).
         // Fields
         MySqlConnection dbconn = new MySqlConnection("SERVER=78.47.156.120;PORT=3306;DATABASE=roomreservations;UID=roomManager;PWD=apipassword;");
 
@@ -41,12 +40,12 @@ namespace RoomManagementSystem
 
             // Clears The list and then re-adds the column data.
             roomView1.Clear();
-            roomView1.Columns.Add("Room ID", 85, HorizontalAlignment.Left);
+            roomView1.Columns.Add("Room ID", 50, HorizontalAlignment.Left);
             roomView1.Columns.Add("Name", 120, HorizontalAlignment.Left);
-            roomView1.Columns.Add("Description", 300, HorizontalAlignment.Left);
-            roomView1.Columns.Add("Opening Hour", 112, HorizontalAlignment.Left);
-            roomView1.Columns.Add("Closing Hour", 112, HorizontalAlignment.Left);
-            roomView1.Columns.Add("Avaliable", 80, HorizontalAlignment.Left);
+            roomView1.Columns.Add("Description", 240, HorizontalAlignment.Left);
+            roomView1.Columns.Add("Opening Hour", 80, HorizontalAlignment.Left);
+            roomView1.Columns.Add("Closing Hour", 80, HorizontalAlignment.Left);
+            roomView1.Columns.Add("Avaliable", 70, HorizontalAlignment.Left);
 
             // loops for each row in the table.
             foreach (DataRow dr in dt.Rows)
