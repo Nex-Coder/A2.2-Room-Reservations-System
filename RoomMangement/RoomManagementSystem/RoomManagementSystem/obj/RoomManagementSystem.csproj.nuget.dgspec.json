@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Nex\\source\\repos\\Nex-Coder\\A2.2-Room-Reservations-System\\RoomMangement\\RoomManagementSystem\\RoomManagementSystem\\RoomManagementSystem.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Nex\\source\\repos\\Nex-Coder\\A2.2-Room-Reservations-System\\RoomMangement\\RoomManagementSystem\\RoomManagementSystem\\RoomManagementSystem.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Nex\\source\\repos\\Nex-Coder\\A2.2-Room-Reservations-System\\RoomMangement\\RoomManagementSystem\\RoomManagementSystem\\RoomManagementSystem.csproj",
+        "projectName": "RoomManagementSystem",
+        "projectPath": "C:\\Users\\Nex\\source\\repos\\Nex-Coder\\A2.2-Room-Reservations-System\\RoomMangement\\RoomManagementSystem\\RoomManagementSystem\\RoomManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\Nex\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nex\\source\\repos\\Nex-Coder\\A2.2-Room-Reservations-System\\RoomMangement\\RoomManagementSystem\\RoomManagementSystem\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Nex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
