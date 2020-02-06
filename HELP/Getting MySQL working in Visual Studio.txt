@@ -1,0 +1,23 @@
+1.Uninstall/remove "Connector/NET" and "MySQL for Visual Studio" if install is suspectedly bugged OR skip if not installed.
+
+2.Install "MySQL for Visual Studio" v2.0.5 CTP (MySQL for Visual Studio). Note: Install MySQL for Visual Studio before Connector/NET.
+
+3.Install "Connector/NET" v6.9.10 (Connector/Net). https://i.stack.imgur.com/XOT1I.jpg Note: I tried using Connector/NET v6.8, v6.10 and v8 first, but none of them worked with Visual Studio 2017 and ADO.Net. Here you can find all Connector Versions and Compatibilities with Visual Studio IDEs, but so far this list is inaccurate.
+
+4.Note: Until this step, you should be covered, but you'll then encounter Entity Framework issues, follow the next steps to completely configure your environment and you should be good to go.
+
+5.Create new Visual Studio Professional 2017 project.
+
+6.Download and Install "EntityFramework" v6.2.0 through NuGet, by going to Project Tab/Manage NuGet Packages/Browse -> Entity Framework.
+
+7.Add references to C:\Program Files (x86)\MySQL\Connector.NET 6.9.10\Assemblies\v4.5\MySql.Data.dll and C:\Program Files (x86)\MySQL\Connector.NET 6.9.10\Assemblies\v4.5\MySql.Data.Entity.EF6.dll; by Right Clicking over References inside Solution Explorer and selecting Add Reference/Browse ->Browse button.
+
+8.Add MySQL EF6 provider info inside App.config under entity framework providers as follow:
+<entityFramework>
+       <providers>
+         <provider invariantName="MySql.Data.MySqlClient"
+              type="MySql.Data.MySqlClient.MySqlProviderServices, MySql.Data.Entity.EF6" />
+       </providers>
+</entityFramework>
+
+8. Rebuild project by going to Build tab/Rebuild ProjectName.
