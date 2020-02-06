@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="roomreservationsDataSet" targetNamespace="http://tempuri.org/roomreservationsDataSet.xsd" xmlns:mstns="http://tempuri.org/roomreservationsDataSet.xsd" xmlns="http://tempuri.org/roomreservationsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="roomreservationsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="roomreservationsConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RoomManagementSystem.Properties.Settings.GlobalReference.Default.roomreservationsConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="roommanagementTableAdapter" GeneratorDataComponentClassName="roommanagementTableAdapter" Name="roommanagement" UserDataComponentName="roommanagementTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="roomreservationsConnectionString (Settings)" DbObjectName="roomreservations.roommanagement" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `roomID`, `roomName`, `roomDescription`, `roomOpeningTime`, `roomClosingTime`, `roomStatus` FROM `roommanagement`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="roomreservationsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="roomreservationsDataSet" msprop:Generator_UserDSName="roomreservationsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="roommanagement" msprop:Generator_TableClassName="roommanagementDataTable" msprop:Generator_TableVarName="tableroommanagement" msprop:Generator_TablePropName="roommanagement" msprop:Generator_RowDeletingName="roommanagementRowDeleting" msprop:Generator_RowChangingName="roommanagementRowChanging" msprop:Generator_RowEvHandlerName="roommanagementRowChangeEventHandler" msprop:Generator_RowDeletedName="roommanagementRowDeleted" msprop:Generator_UserTableName="roommanagement" msprop:Generator_RowChangedName="roommanagementRowChanged" msprop:Generator_RowEvArgName="roommanagementRowChangeEvent" msprop:Generator_RowClassName="roommanagementRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
