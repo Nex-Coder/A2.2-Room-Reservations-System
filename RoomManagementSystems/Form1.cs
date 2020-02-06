@@ -13,6 +13,7 @@ namespace RoomManagementSystem
 {
     public partial class Form1 : Form
     {
+        // TODO modify the project to follow Encapsulation and thereafter be a Multiclass program (Seperate into librarys).
         // Fields
         MySqlConnection dbconn = new MySqlConnection("SERVER=78.47.156.120;PORT=3306;DATABASE=roomreservations;UID=roomManager;PWD=apipassword;");
 
