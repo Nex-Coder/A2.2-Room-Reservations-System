@@ -17,3 +17,4 @@ C:\Users\Nex\Source\Repos\Nex-Coder\A2.2-Room-Reservations-System\RoomManagement
 C:\Users\Nex\Source\Repos\Nex-Coder\A2.2-Room-Reservations-System\RoomManagementSystems\obj\Debug\RoomManagementSystems.csproj.CopyComplete
 C:\Users\Nex\Source\Repos\Nex-Coder\A2.2-Room-Reservations-System\RoomManagementSystems\obj\Debug\RoomManagementSystems.exe
 C:\Users\Nex\Source\Repos\Nex-Coder\A2.2-Room-Reservations-System\RoomManagementSystems\obj\Debug\RoomManagementSystems.pdb
+C:\Users\Nex\source\repos\Nex-Coder\A2.2-Room-Reservations-System\RoomManagementSystems\obj\Debug\RoomManagementSystems.csprojAssemblyReference.cache
