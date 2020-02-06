@@ -14,7 +14,7 @@ namespace RoomManagementSystem
     public partial class Form1 : Form
     {
         // Fields
-        MySqlConnection dbconn = new MySqlConnection("SERVER=78.47.156.120;PORT=3306;DATABASE=roomreservations;UID=CallumC;PWD=0b8cinsert;");
+        MySqlConnection dbconn = new MySqlConnection("SERVER=78.47.156.120;PORT=3306;DATABASE=roomreservations;UID=roomManager;PWD=tmpUser;");
 
         // Methods/Else
 
