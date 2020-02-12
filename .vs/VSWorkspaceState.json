@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\RoomManagementSystems",
+    "\\RoomManagementSystems\\Properties"
   ],
+  "SelectedNode": "\\RoomManagementSystems\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
