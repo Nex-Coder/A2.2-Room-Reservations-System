@@ -66,11 +66,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="RoomObjCollection.cs" />
+    <Compile Include="RoomObjFindFilter.cs" />
+    <Compile Include="RoomObj.cs" />
+    <Compile Include="RoomManagementSystem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="RoomManagementSystem.Designer.cs">
+      <DependentUpon>RoomManagementSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,13 +82,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="roomreservationsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>roomreservationsDataSet.xsd</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="RoomManagementSystem.resx">
+      <DependentUpon>RoomManagementSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,17 +99,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="roomreservationsDataSet.xsc">
-      <DependentUpon>roomreservationsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="roomreservationsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>roomreservationsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="roomreservationsDataSet.xss">
-      <DependentUpon>roomreservationsDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
