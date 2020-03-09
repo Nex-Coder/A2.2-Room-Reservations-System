@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace RoomManagementSystems
 {
-    class RoomObj
+    public class RoomObj
 
     {
         // Fields
         private int roomID;
         private String roomName;
         private String roomDesc;
-        private String openningHour;
-        private String closingHour;
+        private TimeSpan openningHour = new TimeSpan(0, 0, 0);
+        private TimeSpan closingHour = new TimeSpan(0, 0, 0);
         private Boolean available;
 
         // Constructors
-        public RoomObj(int roomID, String roomName, String roomDesc, String openningHour, String closingHour, Boolean avaliable)
+        public RoomObj(int roomID, String roomName, String roomDesc, TimeSpan openningHour, TimeSpan closingHour, Boolean avaliable)
         {
             this.roomID = roomID;
             this.roomName = roomName;
@@ -57,12 +57,12 @@ namespace RoomManagementSystems
             }
         }
 
-        public void SetOpenningHour(String openningHour) 
+        public void SetOpenningHour(TimeSpan openningHour) 
         {
             this.openningHour = openningHour;
         }
 
-        public void SetClosingHour(String closingHour) 
+        public void SetClosingHour(TimeSpan closingHour) 
         {
             this.closingHour=closingHour;
         }
@@ -90,17 +90,18 @@ namespace RoomManagementSystems
 
         public string GetOpenHour()
         {
-            return openningHour;
+            return openningHour.ToString();
         }
 
         public string GetCloseHour()
         {
-            return closingHour;
+            return closingHour.ToString();
         }
 
         public Boolean GetAvailable()
         {
             return available;
         }
+
     }
 }

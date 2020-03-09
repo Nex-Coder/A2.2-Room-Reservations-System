@@ -49,11 +49,7 @@
             this.lblRoomViewer = new System.Windows.Forms.Label();
             this.lblTimeFormatC = new System.Windows.Forms.Label();
             this.lblTimeFormatO = new System.Windows.Forms.Label();
-            this.txtBoxCloseSec = new System.Windows.Forms.TextBox();
-            this.txtBoxCloseMin = new System.Windows.Forms.TextBox();
             this.txtBoxCloseHour = new System.Windows.Forms.TextBox();
-            this.txtBoxOpenSec = new System.Windows.Forms.TextBox();
-            this.txtBoxOpenMin = new System.Windows.Forms.TextBox();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -171,11 +167,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.lblTimeFormatC);
             this.splitContainer1.Panel2.Controls.Add(this.lblTimeFormatO);
-            this.splitContainer1.Panel2.Controls.Add(this.txtBoxCloseSec);
-            this.splitContainer1.Panel2.Controls.Add(this.txtBoxCloseMin);
             this.splitContainer1.Panel2.Controls.Add(this.txtBoxCloseHour);
-            this.splitContainer1.Panel2.Controls.Add(this.txtBoxOpenSec);
-            this.splitContainer1.Panel2.Controls.Add(this.txtBoxOpenMin);
             this.splitContainer1.Panel2.Controls.Add(this.buttonNew);
             this.splitContainer1.Panel2.Controls.Add(this.buttonClear);
             this.splitContainer1.Panel2.Controls.Add(this.buttonEdit);
@@ -208,11 +200,12 @@
             // 
             this.lblIn.AutoSize = true;
             this.lblIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIn.Location = new System.Drawing.Point(724, 112);
+            this.lblIn.Location = new System.Drawing.Point(717, 112);
             this.lblIn.Name = "lblIn";
-            this.lblIn.Size = new System.Drawing.Size(126, 20);
+            this.lblIn.Size = new System.Drawing.Size(176, 20);
             this.lblIn.TabIndex = 11;
-            this.lblIn.Text = "Find In / Filter:";
+            this.lblIn.Text = "Find In (One) / Filter:";
+            this.lblIn.Click += new System.EventHandler(this.lblIn_Click);
             // 
             // checkedListBox1
             // 
@@ -307,50 +300,14 @@
             this.lblTimeFormatO.TabIndex = 25;
             this.lblTimeFormatO.Text = "hh : mm : ss";
             // 
-            // txtBoxCloseSec
-            // 
-            this.txtBoxCloseSec.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCloseSec.Location = new System.Drawing.Point(757, 75);
-            this.txtBoxCloseSec.MaxLength = 2;
-            this.txtBoxCloseSec.Name = "txtBoxCloseSec";
-            this.txtBoxCloseSec.Size = new System.Drawing.Size(30, 26);
-            this.txtBoxCloseSec.TabIndex = 24;
-            // 
-            // txtBoxCloseMin
-            // 
-            this.txtBoxCloseMin.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCloseMin.Location = new System.Drawing.Point(721, 76);
-            this.txtBoxCloseMin.MaxLength = 2;
-            this.txtBoxCloseMin.Name = "txtBoxCloseMin";
-            this.txtBoxCloseMin.Size = new System.Drawing.Size(30, 26);
-            this.txtBoxCloseMin.TabIndex = 23;
-            // 
             // txtBoxCloseHour
             // 
             this.txtBoxCloseHour.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtBoxCloseHour.Location = new System.Drawing.Point(588, 128);
-            this.txtBoxCloseHour.MaxLength = 2;
+            this.txtBoxCloseHour.MaxLength = 8;
             this.txtBoxCloseHour.Name = "txtBoxCloseHour";
             this.txtBoxCloseHour.Size = new System.Drawing.Size(102, 26);
             this.txtBoxCloseHour.TabIndex = 22;
-            // 
-            // txtBoxOpenSec
-            // 
-            this.txtBoxOpenSec.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxOpenSec.Location = new System.Drawing.Point(757, 42);
-            this.txtBoxOpenSec.MaxLength = 2;
-            this.txtBoxOpenSec.Name = "txtBoxOpenSec";
-            this.txtBoxOpenSec.Size = new System.Drawing.Size(30, 26);
-            this.txtBoxOpenSec.TabIndex = 21;
-            // 
-            // txtBoxOpenMin
-            // 
-            this.txtBoxOpenMin.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxOpenMin.Location = new System.Drawing.Point(721, 44);
-            this.txtBoxOpenMin.MaxLength = 2;
-            this.txtBoxOpenMin.Name = "txtBoxOpenMin";
-            this.txtBoxOpenMin.Size = new System.Drawing.Size(30, 26);
-            this.txtBoxOpenMin.TabIndex = 20;
             // 
             // buttonNew
             // 
@@ -423,7 +380,7 @@
             // 
             this.txtBoxOpenHour.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtBoxOpenHour.Location = new System.Drawing.Point(588, 83);
-            this.txtBoxOpenHour.MaxLength = 2;
+            this.txtBoxOpenHour.MaxLength = 8;
             this.txtBoxOpenHour.Name = "txtBoxOpenHour";
             this.txtBoxOpenHour.Size = new System.Drawing.Size(102, 26);
             this.txtBoxOpenHour.TabIndex = 11;
@@ -635,15 +592,11 @@
         private System.Windows.Forms.Label lblFind;
         private System.Windows.Forms.TextBox txtBoxFind;
         private System.Windows.Forms.Label lblIn;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label lblTimeFormatO;
-        private System.Windows.Forms.TextBox txtBoxCloseSec;
-        private System.Windows.Forms.TextBox txtBoxCloseMin;
         private System.Windows.Forms.TextBox txtBoxCloseHour;
-        private System.Windows.Forms.TextBox txtBoxOpenSec;
-        private System.Windows.Forms.TextBox txtBoxOpenMin;
         private System.Windows.Forms.Label lblTimeFormatC;
         private System.Windows.Forms.Button btnClearFoundFilter;
+        public System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 

@@ -5,6 +5,13 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomManagementSystems", "RoomManagementSystems.csproj", "{CA963F20-52DA-4384-8813-D6404C8452FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomManagementTest", "..\RoomManagementTest\RoomManagementTest.csproj", "{6601C24C-2E44-427B-AEB5-3996341AD29C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31A3B648-1094-46EC-98F4-6511F5B61584}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,10 @@ Global
 		{CA963F20-52DA-4384-8813-D6404C8452FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA963F20-52DA-4384-8813-D6404C8452FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA963F20-52DA-4384-8813-D6404C8452FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6601C24C-2E44-427B-AEB5-3996341AD29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6601C24C-2E44-427B-AEB5-3996341AD29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6601C24C-2E44-427B-AEB5-3996341AD29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6601C24C-2E44-427B-AEB5-3996341AD29C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
