@@ -66,9 +66,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RoomObjCollection.cs" />
-    <Compile Include="RoomObjFindFilter.cs" />
-    <Compile Include="RoomObj.cs" />
+    <Compile Include="Lib\RoomObjCollection.cs" />
+    <Compile Include="Lib\RoomObjFindFilter.cs" />
+    <Compile Include="Lib\RoomObj.cs" />
     <Compile Include="RoomManagementSystem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +90,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
