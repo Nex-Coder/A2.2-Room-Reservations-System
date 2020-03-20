@@ -9,12 +9,13 @@ using RoomManagementSystems;
 namespace RoomManagementSystem
 {
     public partial class rmsForm : Form
-    {
+    {   // Fields
         private List<RoomObj> rooms = new List<RoomObj>();
 
+        // Methods
         private void List(DataTable dt)
         {
-            // Clears The list and then re-adds the column data (Name, Width, Alignment).
+            // Clears The list and then re-adds the column data (Name, Width, Alignment). Needs clearing because we need to remove the rows associated.
             rooms.Clear();
             roomView.Clear();
             roomView.Columns.Add("Room ID", 85, HorizontalAlignment.Left);
@@ -23,6 +24,7 @@ namespace RoomManagementSystem
             roomView.Columns.Add("Opening Hour", 112, HorizontalAlignment.Left);
             roomView.Columns.Add("Closing Hour", 112, HorizontalAlignment.Left);
             roomView.Columns.Add("Avaliable", 80, HorizontalAlignment.Left);
+
 
 
             // DataTable dt = RoomObjCollection.List();
@@ -41,12 +43,12 @@ namespace RoomManagementSystem
             foreach (var roomobj in rooms)
             {
                 ListViewItem dbRow = new ListViewItem(roomobj.GetRoomID().ToString());
-                dbRow.SubItems.Add(roomobj.GetRoomName());
-                dbRow.SubItems.Add(roomobj.GetRoomDesc());
-                dbRow.SubItems.Add(roomobj.GetOpenHour());
-                dbRow.SubItems.Add(roomobj.GetCloseHour());
-                dbRow.SubItems.Add(roomobj.GetAvailable().ToString());
-                roomView.Items.AddRange(new ListViewItem[] { dbRow });
+                dbRow.SubItems.Add(roomobj.GetRoomName());              // ID
+                dbRow.SubItems.Add(roomobj.GetRoomDesc());              // Name
+                dbRow.SubItems.Add(roomobj.GetOpenHour());              // Desc
+                dbRow.SubItems.Add(roomobj.GetCloseHour());             // Open
+                dbRow.SubItems.Add(roomobj.GetAvailable().ToString());  // Close
+                roomView.Items.AddRange(new ListViewItem[] { dbRow });  // Avaliable/Status
             }
         }
 
@@ -55,26 +57,29 @@ namespace RoomManagementSystem
         public rmsForm()
         {
             InitializeComponent();
-            List(RoomObjCollection.List());
+            List(RoomObjCollection.List()); 
         }
 
         // Update/Refresh Button.
         private void button1_Click(object sender, EventArgs e)
         {
-            List(RoomObjCollection.List());
+            List(RoomObjCollection.List()); // Lists the newest data.
         }
 
+        // New Room/Row button
         private void buttonNew_Click(object sender, EventArgs e)
         {
+            //Creates a new room obj and gives it to the Add method. Aftwards List is called to automatically refresh the data.
             RoomObjCollection.Add(new RoomObj(0, txtBoxName.Text, rtxtBoxDesc.Text, TimeSpan.Parse(txtBoxOpenHour.Text), TimeSpan.Parse(txtBoxCloseHour.Text), checkBoxAvaliable.Checked));
             List(RoomObjCollection.List());
         }
 
+        // Find Button.
         private void buttonFind_Click(object sender, EventArgs e)
         {
-            String findIn = "";
+            String findIn = ""; // Needs to be declared otherwise compiler screams at you.
 
-            if (checkedListBox1.CheckedItems.Count == 1)
+            if (checkedListBox1.CheckedItems.Count == 1) // If one is selected from checkboxes only then continue.
             {
                 // there is only one possible check thanks to the if statement so it's not so taxing.
                 foreach (int indexChecked in checkedListBox1.CheckedIndices)
@@ -102,11 +107,11 @@ namespace RoomManagementSystem
                     }
                 }
 
-                if (txtBoxFind.Text.ToLower() == "true")
+                if (txtBoxFind.Text.ToLower() == "true") // if you wants to find true.
                 {
                     List(RoomObjCollection.Find(findIn, "1"));
                 }
-                else
+                else // everything else. If user wants to find false in available it will default to false as long as true isn't entered.
                 {
                     List(RoomObjCollection.Find(findIn, txtBoxFind.Text));
                 }
@@ -117,6 +122,7 @@ namespace RoomManagementSystem
             }
         }
 
+        // Select button which gets the selected element from roomView and sets the values of each column to the corisponding row.
         private void buttonSelect_Click(object sender, EventArgs e)
         {
             if (roomView.SelectedItems.Count == 1)
