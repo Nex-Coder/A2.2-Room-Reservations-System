@@ -70,8 +70,17 @@ namespace RoomManagementSystem
         private void buttonNew_Click(object sender, EventArgs e)
         {
             //Creates a new room obj and gives it to the Add method. Aftwards List is called to automatically refresh the data.
-            RoomObjCollection.Add(new RoomObj(0, txtBoxName.Text, rtxtBoxDesc.Text, TimeSpan.Parse(txtBoxOpenHour.Text), TimeSpan.Parse(txtBoxCloseHour.Text), checkBoxAvaliable.Checked));
-            List(RoomObjCollection.List());
+
+            try
+            {
+                RoomObjCollection.Add(new RoomObj(0, txtBoxName.Text, rtxtBoxDesc.Text, TimeSpan.Parse(txtBoxOpenHour.Text), TimeSpan.Parse(txtBoxCloseHour.Text), checkBoxAvaliable.Checked));
+                List(RoomObjCollection.List());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("One or more of your values is incorrect. Please check for mistakes.\nRequest Failed.");
+            }
+
         }
 
         // Find Button.
@@ -140,6 +149,49 @@ namespace RoomManagementSystem
         private void lblIn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (txtBoxRoomID.TextLength <= 0)
+            {
+                MessageBox.Show("Please select a room to edit first, then try deleting again.");
+            }
+            else 
+            {
+                RoomObjCollection.Delete(new RoomObj(int.Parse(txtBoxRoomID.Text), txtBoxName.Text, rtxtBoxDesc.Text, TimeSpan.Parse(txtBoxOpenHour.Text), TimeSpan.Parse(txtBoxCloseHour.Text), checkBoxAvaliable.Checked));
+                List(RoomObjCollection.List());
+            }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            txtBoxRoomID.Text = "";
+            txtBoxName.Text = "";
+            rtxtBoxDesc.Text = "";
+            txtBoxOpenHour.Text = "";
+            txtBoxCloseHour.Text = "";
+            checkBoxAvaliable.Checked = false;
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            if (txtBoxRoomID.TextLength <= 0 || txtBoxName.TextLength <= 0)
+            {
+                MessageBox.Show("Please select a room to edit first or make sure a name is provided.\nRequest Failed.");
+            }
+            else
+            {
+                try
+                {
+                    RoomObjCollection.Edit(new RoomObj(int.Parse(txtBoxRoomID.Text), txtBoxName.Text, rtxtBoxDesc.Text, TimeSpan.Parse(txtBoxOpenHour.Text), TimeSpan.Parse(txtBoxCloseHour.Text), checkBoxAvaliable.Checked));
+                    List(RoomObjCollection.List());
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("One or more of your values is incorrect. Please check for mistakes.\nRequest Failed.");
+                }
+            }
         }
     }
 }

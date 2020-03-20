@@ -13,7 +13,7 @@ namespace RoomManagementSystems
     class RoomObjCollection
     {
         private static MySqlConnection dbconn = new MySqlConnection("SERVER=78.47.156.120;PORT=3306;DATABASE=roomreservations;UID=roomManager;PWD=apipassword;");
-        
+
 
         public static DataTable List()
         {
@@ -28,7 +28,7 @@ namespace RoomManagementSystems
             dbconn.Close();                               // Closing Database connection.
             return dt = ds.Tables[0];                     // Returning the table.
         }
-         
+
         public static void Add(RoomObj room)
         {
             // MySQL command to add the RoomObj given in the param.
@@ -65,5 +65,42 @@ namespace RoomManagementSystems
             return dt = ds.Tables[0];                     // Returning the table.
         }
 
+        public static void Delete(RoomObj room)
+        {
+            // MySQL command to add the RoomObj given in the param.
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM roomManagement WHERE roomID='" + room.GetRoomID() + "';", dbconn);
+            dbconn.Open();                                // Opens DB connection
+            try                            // We are only 'trying' to run the command, if there any errors then we will catch them during these statements similar to Add().
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show(e.Message + "\nRequest Failed.");   // If an MySqlException is caught (because invalid command) then it will alert the user of the error.
+            }
+            finally
+            {
+                dbconn.Close();                                     // Exception or not, regardless the db connection finally closes.
+            }
+        }
+
+        public static void Edit(RoomObj room)
+        {
+            // MySQL command to add the RoomObj given in the param.
+            MySqlCommand cmd = new MySqlCommand("UPDATE roommanagement SET roomName = '" + room.GetRoomName() + "', roomDescription = '" + room.GetRoomDesc() + "', roomOpeningTime = STR_TO_DATE('" + room.GetOpenHour() + "', '%H:%i:%s'), roomClosingTime = STR_TO_DATE('" + room.GetCloseHour() + "', '%H:%i:%s'), roomStatus = '" + Convert.ToInt32(room.GetAvailable()) + "' WHERE roomID = 22", dbconn);
+            dbconn.Open();
+            try                            // We are only 'trying' to run the command, if there any errors then we will catch them during these statements similar to Add().
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show(e.Message + "\nRequest Failed.");   // If an MySqlException is caught (because invalid command) then it will alert the user of the error.
+            }
+            finally
+            {
+                dbconn.Close();                                     // Exception or not, regardless the db connection finally closes.
+            }
+        }
     }
 }
