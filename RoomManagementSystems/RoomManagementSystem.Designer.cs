@@ -38,7 +38,6 @@
             this.roomClose = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.roomStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnClearFoundFilter = new System.Windows.Forms.Button();
             this.lblIn = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.lblFind = new System.Windows.Forms.Label();
@@ -151,7 +150,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnClearFoundFilter);
             this.splitContainer1.Panel1.Controls.Add(this.lblIn);
             this.splitContainer1.Panel1.Controls.Add(this.checkedListBox1);
             this.splitContainer1.Panel1.Controls.Add(this.lblFind);
@@ -186,15 +184,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(885, 587);
             this.splitContainer1.SplitterDistance = 360;
             this.splitContainer1.TabIndex = 4;
-            // 
-            // btnClearFoundFilter
-            // 
-            this.btnClearFoundFilter.Location = new System.Drawing.Point(721, 316);
-            this.btnClearFoundFilter.Name = "btnClearFoundFilter";
-            this.btnClearFoundFilter.Size = new System.Drawing.Size(164, 27);
-            this.btnClearFoundFilter.TabIndex = 12;
-            this.btnClearFoundFilter.Text = "Clear Found / Filter";
-            this.btnClearFoundFilter.UseVisualStyleBackColor = true;
             // 
             // lblIn
             // 
@@ -264,7 +253,7 @@
             // 
             this.buttonSelect.Location = new System.Drawing.Point(117, 330);
             this.buttonSelect.Name = "buttonSelect";
-            this.buttonSelect.Size = new System.Drawing.Size(142, 29);
+            this.buttonSelect.Size = new System.Drawing.Size(142, 27);
             this.buttonSelect.TabIndex = 4;
             this.buttonSelect.Text = "Edit Selection";
             this.buttonSelect.UseVisualStyleBackColor = true;
@@ -327,6 +316,7 @@
             this.buttonClear.TabIndex = 18;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonEdit
             // 
@@ -336,6 +326,7 @@
             this.buttonEdit.TabIndex = 17;
             this.buttonEdit.Text = "Submit Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDelete
             // 
@@ -345,6 +336,7 @@
             this.buttonDelete.TabIndex = 16;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // checkBoxAvaliable
             // 
@@ -595,7 +587,6 @@
         private System.Windows.Forms.Label lblTimeFormatO;
         private System.Windows.Forms.TextBox txtBoxCloseHour;
         private System.Windows.Forms.Label lblTimeFormatC;
-        private System.Windows.Forms.Button btnClearFoundFilter;
         public System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
