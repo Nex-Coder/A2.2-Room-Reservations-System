@@ -5,18 +5,19 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using RoomManagementSystems;
+using System.Linq;
 
 namespace RoomManagementSystem
 {
     public partial class rmsForm : Form
     {   // Fields
-        private List<RoomObj> rooms = new List<RoomObj>();
+        private List<RoomObj> Rooms = new List<RoomObj>();
 
         // Methods
         private void List(DataTable dt)
         {
             // Clears The list and then re-adds the column data (Name, Width, Alignment). Needs clearing because we need to remove the rows associated.
-            rooms.Clear();
+            Rooms.Clear();
             roomView.Clear();
             roomView.Columns.Add("Room ID", 85, HorizontalAlignment.Left);
             roomView.Columns.Add("Name", 120, HorizontalAlignment.Left);
@@ -31,7 +32,7 @@ namespace RoomManagementSystem
 
             foreach (DataRow dr in dt.Rows)
             {
-                rooms.Add(new RoomObj((int)dr["roomid"],             // ID
+                Rooms.Add(new RoomObj((int)dr["roomid"],             // ID
                 dr["roomname"].ToString(),                           // Name
                 dr["roomdescription"].ToString(),                    // Desc
                 TimeSpan.Parse(dr["roomopeningtime"].ToString()),    // Open
@@ -40,7 +41,7 @@ namespace RoomManagementSystem
             }
 
             // Filling table.
-            foreach (var roomobj in rooms)
+            foreach (var roomobj in Rooms)
             {
                 ListViewItem dbRow = new ListViewItem(roomobj.GetRoomID().ToString());
                 dbRow.SubItems.Add(roomobj.GetRoomName());              // ID
@@ -57,7 +58,7 @@ namespace RoomManagementSystem
         public rmsForm()
         {
             InitializeComponent();
-            List(RoomObjCollection.List()); 
+            List(RoomObjCollection.List());
         }
 
         // Update/Refresh Button.
@@ -73,8 +74,17 @@ namespace RoomManagementSystem
 
             try
             {
-                RoomObjCollection.Add(new RoomObj(0, txtBoxName.Text, rtxtBoxDesc.Text, TimeSpan.Parse(txtBoxOpenHour.Text), TimeSpan.Parse(txtBoxCloseHour.Text), checkBoxAvaliable.Checked));
-                List(RoomObjCollection.List());
+                RoomObj UsersRoom = new RoomObj(0, txtBoxName.Text, rtxtBoxDesc.Text, TimeSpan.Parse(txtBoxOpenHour.Text), TimeSpan.Parse(txtBoxCloseHour.Text), checkBoxAvaliable.Checked);
+                if (UsersRoom.Validate() == "") // Checking for anything not caught by the handle exception.
+                {
+                    RoomObjCollection.Add(UsersRoom);
+                    List(RoomObjCollection.List());
+                }
+                else
+                {
+                    MessageBox.Show("Error: Your Room contains invalid values\n" + UsersRoom.Validate());
+                }
+
             }
             catch (Exception)
             {
@@ -88,46 +98,48 @@ namespace RoomManagementSystem
         {
             String findIn = ""; // Needs to be declared otherwise compiler screams at you.
 
-            if (checkedListBox1.CheckedItems.Count == 1) // If one is selected from checkboxes only then continue.
+            RadioButton radio = radioGroup.Controls.OfType<RadioButton>().Where(x => x.Checked).FirstOrDefault(); // Gets the radio button in the group thats checked using a simple function and predicate.
+            if (radio != null)
             {
-                // there is only one possible check thanks to the if statement so it's not so taxing.
-                foreach (int indexChecked in checkedListBox1.CheckedIndices)
+                switch (radio.Name)
                 {
-                    switch (indexChecked)
-                    {
-                        case 0:
-                            findIn = "roomID";
-                            break;
-                        case 1:
-                            findIn = "roomName";
-                            break;
-                        case 2:
-                            findIn = "roomDescription";
-                            break;
-                        case 3:
-                            findIn = "roomOpeningTime";
-                            break;
-                        case 4:
-                            findIn = "roomClosingTime";
-                            break;
-                        case 5:
-                            findIn = "roomStatus";
-                            break;
-                    }
+                    case "rbRoomID":
+                        findIn = "roomID";
+                        break;
+                    case "rbName":
+                        findIn = "roomName";
+                        break;
+                    case "rbDescription":
+                        findIn = "roomDescription";
+                        break;
+                    case "rbOpenningHour":
+                        findIn = "roomOpeningTime";
+                        break;
+                    case "rbClosingHour":
+                        findIn = "roomClosingTime";
+                        break;
+                    case "rbAvaliable":
+                        findIn = "roomStatus";
+                        break;
                 }
 
-                if (txtBoxFind.Text.ToLower() == "true") // if you wants to find true.
+                switch (txtBoxFind.Text.ToLower())
                 {
-                    List(RoomObjCollection.Find(findIn, "1"));
+                    case "true":
+                        List(RoomObjCollection.Find(findIn, "1"));
+                        break;
+                    case "false":
+                        List(RoomObjCollection.Find(findIn, "0"));
+                        break;
+                    default:
+                        List(RoomObjCollection.Find(findIn, txtBoxFind.Text));
+                        break;
                 }
-                else // everything else. If user wants to find false in available it will default to false as long as true isn't entered.
-                {
-                    List(RoomObjCollection.Find(findIn, txtBoxFind.Text));
-                }
+
             }
             else
             {
-                MessageBox.Show("The number of options (" + checkedListBox1.CheckedItems.Count + ") checked is not valid.\nPlease only select 1.");
+                MessageBox.Show("Please select an option to find in / filter through.");
             }
         }
 
@@ -157,10 +169,18 @@ namespace RoomManagementSystem
             {
                 MessageBox.Show("Please select a room to edit first, then try deleting again.");
             }
-            else 
+            else
             {
-                RoomObjCollection.Delete(new RoomObj(int.Parse(txtBoxRoomID.Text), txtBoxName.Text, rtxtBoxDesc.Text, TimeSpan.Parse(txtBoxOpenHour.Text), TimeSpan.Parse(txtBoxCloseHour.Text), checkBoxAvaliable.Checked));
-                List(RoomObjCollection.List());
+                RoomObj UsersRoom = new RoomObj(int.Parse(txtBoxRoomID.Text), txtBoxName.Text, rtxtBoxDesc.Text, TimeSpan.Parse(txtBoxOpenHour.Text), TimeSpan.Parse(txtBoxCloseHour.Text), checkBoxAvaliable.Checked);
+                if (UsersRoom.Validate() == "") // Checking for anything not caught by the handle exception.
+                {
+                    RoomObjCollection.Delete(UsersRoom);
+                    List(RoomObjCollection.List()); //Refresh
+                }
+                else
+                {
+                    MessageBox.Show("Error: Your Room contains invalid values\n" + UsersRoom.Validate());
+                }
             }
         }
 
@@ -184,13 +204,70 @@ namespace RoomManagementSystem
             {
                 try
                 {
-                    RoomObjCollection.Edit(new RoomObj(int.Parse(txtBoxRoomID.Text), txtBoxName.Text, rtxtBoxDesc.Text, TimeSpan.Parse(txtBoxOpenHour.Text), TimeSpan.Parse(txtBoxCloseHour.Text), checkBoxAvaliable.Checked));
-                    List(RoomObjCollection.List());
+                    RoomObj UsersRoom = new RoomObj(int.Parse(txtBoxRoomID.Text), txtBoxName.Text, rtxtBoxDesc.Text, TimeSpan.Parse(txtBoxOpenHour.Text), TimeSpan.Parse(txtBoxCloseHour.Text), checkBoxAvaliable.Checked);
+                    if (UsersRoom.Validate() == "") // Checking for anything not caught by the handle exception.
+                    {
+                        RoomObjCollection.Edit(UsersRoom);
+                        List(RoomObjCollection.List()); //Refresh
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: Your Room contains invalid values\n" + UsersRoom.Validate());
+                    }
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("One or more of your values is incorrect. Please check for mistakes.\nRequest Failed.");
                 }
+            }
+        }
+
+        private void buttonFilter_Click(object sender, EventArgs e)
+        {
+            String filterIn = "";
+
+            RadioButton radio = radioGroup.Controls.OfType<RadioButton>().Where(x => x.Checked).FirstOrDefault(); // Gets the radio button in the group thats checked using a simple function and predicate.
+            if (radio != null)
+            {
+                switch (radio.Name) // Converts the radio button to the column name in database.
+                {
+                    case "rbRoomID":
+                        filterIn = "roomID";
+                        break;
+                    case "rbName":
+                        filterIn = "roomName";
+                        break;
+                    case "rbDescription":
+                        filterIn = "roomDescription";
+                        break;
+                    case "rbOpenningHour":
+                        filterIn = "roomOpeningTime";
+                        break;
+                    case "rbClosingHour":
+                        filterIn = "roomClosingTime";
+                        break;
+                    case "rbAvaliable":
+                        filterIn = "roomStatus";
+                        break;
+                }
+
+                switch (txtBoxFind.Text.ToLower()) // Converts true and false to 1 or 0 respectively else submits a normal request.
+                {
+                    case "true":
+                        List(RoomObjCollection.Filter(filterIn, "1"));
+                        break;
+                    case "false":
+                        List(RoomObjCollection.Filter(filterIn, "0"));
+                        break;
+                    default:
+                        List(RoomObjCollection.Filter(filterIn, txtBoxFind.Text));
+                        break;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please select an option to find in / filter through.");
             }
         }
     }

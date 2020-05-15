@@ -10,97 +10,139 @@ namespace RoomManagementSystems
 
     {
         // Fields
-        private int roomID;
-        private String roomName;
-        private String roomDesc;
-        private TimeSpan openningHour = new TimeSpan(0, 0, 0);
-        private TimeSpan closingHour = new TimeSpan(0, 0, 0);
-        private Boolean available;
+        private int RoomID;
+        private String RoomName;
+        private String RoomDesc;
+        private TimeSpan OpenningHour = new TimeSpan(0, 0, 0);
+        private TimeSpan ClosingHour = new TimeSpan(0, 0, 0);
+        private Boolean Available;
 
         // Constructors
         public RoomObj(int roomID, String roomName, String roomDesc, TimeSpan openningHour, TimeSpan closingHour, Boolean avaliable)
         {
-            this.roomID = roomID;
-            this.roomName = roomName;
-            this.roomDesc = roomDesc;
-            this.openningHour = openningHour;
-            this.closingHour = closingHour;
-            this.available = avaliable;
+            this.RoomID = roomID;
+            this.RoomName = roomName;
+            this.RoomDesc = roomDesc;
+            this.OpenningHour = openningHour;
+            this.ClosingHour = closingHour;
+            this.Available = avaliable;
         }
 
         // Methods
-
         //Set
-        public void SetRoomName(String roomName) 
+
+        // No Room ID setter because the database generates that for us.
+
+        public void SetRoomName(String roomName)
         {
-            if (roomName.Length <= 24)
-            {
-                this.roomName=roomName;
-            }
-            else
-            {
-                throw new ArgumentException(String.Format("{0} is not a valid", roomName),
-                      "room name length");
-            }
+            this.RoomName = roomName;
+        }
+
+        public void SetRoomDesc(String roomDesc)
+        {
+            this.RoomDesc = roomDesc;
 
         }
 
-        public void SetRoomDesc(String roomDesc) 
+        public void SetOpenningHour(TimeSpan openningHour)
         {
-            if (roomDesc.Length <= 120)
-            {
-                this.roomDesc = roomDesc;
-            } else
-            {
-                throw new ArgumentException(String.Format("{0} is not a valid", roomDesc),
-                      "description length");
-            }
+            this.OpenningHour = openningHour;
         }
 
-        public void SetOpenningHour(TimeSpan openningHour) 
+        public void SetClosingHour(TimeSpan closingHour)
         {
-            this.openningHour = openningHour;
+            this.ClosingHour = closingHour;
         }
 
-        public void SetClosingHour(TimeSpan closingHour) 
+        public void SetAvailable(Boolean available)
         {
-            this.closingHour=closingHour;
-        }
-
-        public void SetAvailable(Boolean available) 
-        {
-            this.available = available;
+            this.Available = available;
         }
 
         // Get
-        public int GetRoomID() 
+        public int GetRoomID()
         {
-            return roomID;
+            return RoomID; // Only usefull for editing a real room in the database already. Otherwise its represented symantically.
         }
 
-        public string GetRoomName() 
+        public string GetRoomName()
         {
-            return roomName;
+            return RoomName;
         }
 
         public string GetRoomDesc()
         {
-            return roomDesc;
+            return RoomDesc;
         }
 
         public string GetOpenHour()
         {
-            return openningHour.ToString();
+            return OpenningHour.ToString();
         }
 
         public string GetCloseHour()
         {
-            return closingHour.ToString();
+            return ClosingHour.ToString();
         }
 
         public Boolean GetAvailable()
         {
-            return available;
+            return Available;
+        }
+
+        public String Validate()
+        {
+            String Error = "";
+            // Room ID validation
+            if (this.RoomID > 255)
+            {
+                Error += "RoomID cannot be bigger than 255.";
+            }
+            else if (this.RoomID < 0)
+            {
+                Error += "RoomID cannot be a negative value.";
+            }
+
+            //Room Name validation
+            if (this.RoomName.Count() > 24)
+            {
+                Error += "Room Name: Cannot be bigger than allowed size (24 characters).";
+            }
+            else if (this.RoomName.Count() == 0)
+            {
+                Error += "Room Name: Cannot be an empty name.";
+            }
+
+            //Room Description validation
+            if (this.RoomDesc.Count() > 120)
+            {
+                Error += "Room Description: Cannot be bigger than allowed size (120 characters).";
+            }
+            // Can be empty. Is not required field.
+
+            // Openning Hour validation
+            if (this.OpenningHour >= new TimeSpan(23, 59, 59))
+            {
+                Error += "Openning Hour: Cannot be greater than 23:59:59. Midnight must be represented by 00:00:00.";
+            }
+            else if (this.OpenningHour < new TimeSpan(00, 00, 00))
+            {
+                Error += "Openning Hour: Cannot be a negative time i.e. less than 00:00:00.";
+            }
+
+            // Closing Hour validation
+            if (this.ClosingHour >= new TimeSpan(23, 59, 59))
+            {
+                Error += "Openning Hour: Cannot be greater than 23:59:59. Midnight must be represented by 00:00:00.";
+            }
+            else if (this.ClosingHour < new TimeSpan(00, 00, 00))
+            {
+                Error += "Openning Hour: Cannot be a negative time i.e. less than 00:00:00.";
+            }
+
+            // Avaliability cannot be an invalid value, it is either true or false.
+
+            return Error;
         }
 
     }
