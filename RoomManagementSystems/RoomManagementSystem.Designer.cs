@@ -39,7 +39,13 @@
             this.roomStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lblIn = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.radioGroup = new System.Windows.Forms.GroupBox();
+            this.rbOpenningHour = new System.Windows.Forms.RadioButton();
+            this.rbClosingHour = new System.Windows.Forms.RadioButton();
+            this.rbAvaliable = new System.Windows.Forms.RadioButton();
+            this.rbDescription = new System.Windows.Forms.RadioButton();
+            this.rbRoomID = new System.Windows.Forms.RadioButton();
+            this.rbName = new System.Windows.Forms.RadioButton();
             this.lblFind = new System.Windows.Forms.Label();
             this.txtBoxFind = new System.Windows.Forms.TextBox();
             this.buttonFind = new System.Windows.Forms.Button();
@@ -65,20 +71,11 @@
             this.txtBoxName = new System.Windows.Forms.TextBox();
             this.lblRoomEditor = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reloadWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.navigateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informationGuideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.menuStrip.SuspendLayout();
+            this.radioGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonRefresh
@@ -151,7 +148,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.lblIn);
-            this.splitContainer1.Panel1.Controls.Add(this.checkedListBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.radioGroup);
             this.splitContainer1.Panel1.Controls.Add(this.lblFind);
             this.splitContainer1.Panel1.Controls.Add(this.txtBoxFind);
             this.splitContainer1.Panel1.Controls.Add(this.buttonFind);
@@ -196,27 +193,92 @@
             this.lblIn.Text = "Find In (One) / Filter:";
             this.lblIn.Click += new System.EventHandler(this.lblIn_Click);
             // 
-            // checkedListBox1
+            // radioGroup
             // 
-            this.checkedListBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Room ID",
-            "Name",
-            "Description",
-            "Openning Hour",
-            "Closing Hour",
-            "Avaliable"});
-            this.checkedListBox1.Location = new System.Drawing.Point(721, 135);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(164, 130);
-            this.checkedListBox1.TabIndex = 10;
+            this.radioGroup.Controls.Add(this.rbOpenningHour);
+            this.radioGroup.Controls.Add(this.rbClosingHour);
+            this.radioGroup.Controls.Add(this.rbAvaliable);
+            this.radioGroup.Controls.Add(this.rbDescription);
+            this.radioGroup.Controls.Add(this.rbRoomID);
+            this.radioGroup.Controls.Add(this.rbName);
+            this.radioGroup.Location = new System.Drawing.Point(721, 135);
+            this.radioGroup.Name = "radioGroup";
+            this.radioGroup.Size = new System.Drawing.Size(158, 151);
+            this.radioGroup.TabIndex = 14;
+            this.radioGroup.TabStop = false;
+            // 
+            // rbOpenningHour
+            // 
+            this.rbOpenningHour.AutoSize = true;
+            this.rbOpenningHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F);
+            this.rbOpenningHour.Location = new System.Drawing.Point(6, 76);
+            this.rbOpenningHour.Name = "rbOpenningHour";
+            this.rbOpenningHour.Size = new System.Drawing.Size(135, 24);
+            this.rbOpenningHour.TabIndex = 15;
+            this.rbOpenningHour.TabStop = true;
+            this.rbOpenningHour.Text = "Openning Hour";
+            this.rbOpenningHour.UseVisualStyleBackColor = true;
+            // 
+            // rbClosingHour
+            // 
+            this.rbClosingHour.AutoSize = true;
+            this.rbClosingHour.Location = new System.Drawing.Point(6, 97);
+            this.rbClosingHour.Name = "rbClosingHour";
+            this.rbClosingHour.Size = new System.Drawing.Size(118, 24);
+            this.rbClosingHour.TabIndex = 16;
+            this.rbClosingHour.TabStop = true;
+            this.rbClosingHour.Text = "Closing Hour";
+            this.rbClosingHour.UseVisualStyleBackColor = true;
+            // 
+            // rbAvaliable
+            // 
+            this.rbAvaliable.AutoSize = true;
+            this.rbAvaliable.Location = new System.Drawing.Point(6, 117);
+            this.rbAvaliable.Name = "rbAvaliable";
+            this.rbAvaliable.Size = new System.Drawing.Size(90, 24);
+            this.rbAvaliable.TabIndex = 17;
+            this.rbAvaliable.TabStop = true;
+            this.rbAvaliable.Text = "Avaliable";
+            this.rbAvaliable.UseVisualStyleBackColor = true;
+            // 
+            // rbDescription
+            // 
+            this.rbDescription.AutoSize = true;
+            this.rbDescription.Location = new System.Drawing.Point(6, 55);
+            this.rbDescription.Name = "rbDescription";
+            this.rbDescription.Size = new System.Drawing.Size(107, 24);
+            this.rbDescription.TabIndex = 14;
+            this.rbDescription.TabStop = true;
+            this.rbDescription.Text = "Description";
+            this.rbDescription.UseVisualStyleBackColor = true;
+            // 
+            // rbRoomID
+            // 
+            this.rbRoomID.AutoSize = true;
+            this.rbRoomID.Location = new System.Drawing.Point(6, 16);
+            this.rbRoomID.Name = "rbRoomID";
+            this.rbRoomID.Size = new System.Drawing.Size(91, 24);
+            this.rbRoomID.TabIndex = 12;
+            this.rbRoomID.TabStop = true;
+            this.rbRoomID.Text = "Room ID";
+            this.rbRoomID.UseVisualStyleBackColor = true;
+            // 
+            // rbName
+            // 
+            this.rbName.AutoSize = true;
+            this.rbName.Location = new System.Drawing.Point(6, 36);
+            this.rbName.Name = "rbName";
+            this.rbName.Size = new System.Drawing.Size(69, 24);
+            this.rbName.TabIndex = 13;
+            this.rbName.TabStop = true;
+            this.rbName.Text = "Name";
+            this.rbName.UseVisualStyleBackColor = true;
             // 
             // lblFind
             // 
             this.lblFind.AutoSize = true;
             this.lblFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFind.Location = new System.Drawing.Point(724, 60);
+            this.lblFind.Location = new System.Drawing.Point(717, 60);
             this.lblFind.Name = "lblFind";
             this.lblFind.Size = new System.Drawing.Size(49, 20);
             this.lblFind.TabIndex = 9;
@@ -232,7 +294,7 @@
             // 
             // buttonFind
             // 
-            this.buttonFind.Location = new System.Drawing.Point(721, 283);
+            this.buttonFind.Location = new System.Drawing.Point(721, 295);
             this.buttonFind.Name = "buttonFind";
             this.buttonFind.Size = new System.Drawing.Size(80, 27);
             this.buttonFind.TabIndex = 6;
@@ -242,12 +304,13 @@
             // 
             // buttonFilter
             // 
-            this.buttonFilter.Location = new System.Drawing.Point(807, 283);
+            this.buttonFilter.Location = new System.Drawing.Point(807, 295);
             this.buttonFilter.Name = "buttonFilter";
             this.buttonFilter.Size = new System.Drawing.Size(78, 27);
             this.buttonFilter.TabIndex = 5;
             this.buttonFilter.Text = "Filter";
             this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
             // 
             // buttonSelect
             // 
@@ -271,6 +334,7 @@
             // 
             // lblTimeFormatC
             // 
+            this.lblTimeFormatC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblTimeFormatC.AutoSize = true;
             this.lblTimeFormatC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblTimeFormatC.Location = new System.Drawing.Point(589, 108);
@@ -281,6 +345,7 @@
             // 
             // lblTimeFormatO
             // 
+            this.lblTimeFormatO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblTimeFormatO.AutoSize = true;
             this.lblTimeFormatO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lblTimeFormatO.Location = new System.Drawing.Point(589, 63);
@@ -291,6 +356,7 @@
             // 
             // txtBoxCloseHour
             // 
+            this.txtBoxCloseHour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtBoxCloseHour.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtBoxCloseHour.Location = new System.Drawing.Point(588, 128);
             this.txtBoxCloseHour.MaxLength = 8;
@@ -300,6 +366,7 @@
             // 
             // buttonNew
             // 
+            this.buttonNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonNew.Location = new System.Drawing.Point(702, 152);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(180, 28);
@@ -310,6 +377,7 @@
             // 
             // buttonClear
             // 
+            this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonClear.Location = new System.Drawing.Point(3, 186);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(82, 30);
@@ -320,6 +388,7 @@
             // 
             // buttonEdit
             // 
+            this.buttonEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEdit.Location = new System.Drawing.Point(702, 186);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(99, 29);
@@ -330,6 +399,7 @@
             // 
             // buttonDelete
             // 
+            this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDelete.Location = new System.Drawing.Point(807, 186);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(75, 29);
@@ -340,6 +410,7 @@
             // 
             // checkBoxAvaliable
             // 
+            this.checkBoxAvaliable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.checkBoxAvaliable.AutoSize = true;
             this.checkBoxAvaliable.Location = new System.Drawing.Point(691, 108);
             this.checkBoxAvaliable.Name = "checkBoxAvaliable";
@@ -350,6 +421,7 @@
             // 
             // lblCloseHour
             // 
+            this.lblCloseHour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblCloseHour.AutoSize = true;
             this.lblCloseHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCloseHour.Location = new System.Drawing.Point(465, 134);
@@ -360,6 +432,7 @@
             // 
             // lblOpenHour
             // 
+            this.lblOpenHour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblOpenHour.AutoSize = true;
             this.lblOpenHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOpenHour.Location = new System.Drawing.Point(463, 89);
@@ -370,6 +443,7 @@
             // 
             // txtBoxOpenHour
             // 
+            this.txtBoxOpenHour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtBoxOpenHour.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtBoxOpenHour.Location = new System.Drawing.Point(588, 83);
             this.txtBoxOpenHour.MaxLength = 8;
@@ -379,6 +453,7 @@
             // 
             // lblDesc
             // 
+            this.lblDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblDesc.AutoSize = true;
             this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesc.Location = new System.Drawing.Point(3, 75);
@@ -389,6 +464,7 @@
             // 
             // lblRoomID
             // 
+            this.lblRoomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblRoomID.AutoSize = true;
             this.lblRoomID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomID.Location = new System.Drawing.Point(26, 42);
@@ -399,6 +475,7 @@
             // 
             // lblName
             // 
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(224, 42);
@@ -409,6 +486,7 @@
             // 
             // txtBoxRoomID
             // 
+            this.txtBoxRoomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtBoxRoomID.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtBoxRoomID.Location = new System.Drawing.Point(112, 38);
             this.txtBoxRoomID.Name = "txtBoxRoomID";
@@ -418,6 +496,7 @@
             // 
             // rtxtBoxDesc
             // 
+            this.rtxtBoxDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.rtxtBoxDesc.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.rtxtBoxDesc.Location = new System.Drawing.Point(112, 70);
             this.rtxtBoxDesc.Name = "rtxtBoxDesc";
@@ -427,6 +506,7 @@
             // 
             // txtBoxName
             // 
+            this.txtBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtBoxName.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtBoxName.Location = new System.Drawing.Point(290, 39);
             this.txtBoxName.Name = "txtBoxName";
@@ -435,6 +515,7 @@
             // 
             // lblRoomEditor
             // 
+            this.lblRoomEditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblRoomEditor.AutoSize = true;
             this.lblRoomEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomEditor.Location = new System.Drawing.Point(365, 3);
@@ -448,85 +529,17 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // menuStrip
-            // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.navigateToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(903, 24);
-            this.menuStrip.TabIndex = 6;
-            this.menuStrip.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reloadWindowToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // reloadWindowToolStripMenuItem
-            // 
-            this.reloadWindowToolStripMenuItem.Name = "reloadWindowToolStripMenuItem";
-            this.reloadWindowToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.reloadWindowToolStripMenuItem.Text = "Reload Window";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // navigateToolStripMenuItem
-            // 
-            this.navigateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mainMenuToolStripMenuItem,
-            this.bookingsToolStripMenuItem});
-            this.navigateToolStripMenuItem.Name = "navigateToolStripMenuItem";
-            this.navigateToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.navigateToolStripMenuItem.Text = "Navigate";
-            // 
-            // mainMenuToolStripMenuItem
-            // 
-            this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
-            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.mainMenuToolStripMenuItem.Text = "Main Menu";
-            // 
-            // bookingsToolStripMenuItem
-            // 
-            this.bookingsToolStripMenuItem.Name = "bookingsToolStripMenuItem";
-            this.bookingsToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.bookingsToolStripMenuItem.Text = "Bookings";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informationGuideToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // informationGuideToolStripMenuItem
-            // 
-            this.informationGuideToolStripMenuItem.Name = "informationGuideToolStripMenuItem";
-            this.informationGuideToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.informationGuideToolStripMenuItem.Text = "Information / Guide";
-            // 
             // rmsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(903, 615);
-            this.Controls.Add(this.menuStrip);
+            this.ClientSize = new System.Drawing.Size(904, 616);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(920, 655);
+            this.MinimumSize = new System.Drawing.Size(920, 655);
             this.Name = "rmsForm";
             this.Text = "Room Management System";
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -535,10 +548,9 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
+            this.radioGroup.ResumeLayout(false);
+            this.radioGroup.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -570,15 +582,6 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem navigateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mainMenuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bookingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reloadWindowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem informationGuideToolStripMenuItem;
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.Button buttonFilter;
         private System.Windows.Forms.Label lblFind;
@@ -587,7 +590,13 @@
         private System.Windows.Forms.Label lblTimeFormatO;
         private System.Windows.Forms.TextBox txtBoxCloseHour;
         private System.Windows.Forms.Label lblTimeFormatC;
-        public System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.RadioButton rbRoomID;
+        private System.Windows.Forms.GroupBox radioGroup;
+        private System.Windows.Forms.RadioButton rbName;
+        private System.Windows.Forms.RadioButton rbDescription;
+        private System.Windows.Forms.RadioButton rbClosingHour;
+        private System.Windows.Forms.RadioButton rbOpenningHour;
+        private System.Windows.Forms.RadioButton rbAvaliable;
     }
 }
 

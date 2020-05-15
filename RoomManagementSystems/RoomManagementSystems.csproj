@@ -69,7 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Lib\RoomObjCollection.cs" />
-    <Compile Include="Lib\RoomObjFindFilter.cs" />
     <Compile Include="Lib\RoomObj.cs" />
     <Compile Include="RoomManagementSystem.cs">
       <SubType>Form</SubType>
