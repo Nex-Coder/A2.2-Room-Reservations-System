@@ -68,13 +68,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lib\RoomObjCollection.cs" />
-    <Compile Include="Lib\RoomObj.cs" />
-    <Compile Include="RoomManagementSystem.cs">
+    <Compile Include="Middle Layer Libraries\RoomObjCollection.cs" />
+    <Compile Include="Middle Layer Libraries\RoomObj.cs" />
+    <Compile Include="RoomManagementPresentationLayer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RoomManagementSystem.Designer.cs">
-      <DependentUpon>RoomManagementSystem.cs</DependentUpon>
+    <Compile Include="RoomManagementPresentationLayer.Designer.cs">
+      <DependentUpon>RoomManagementPresentationLayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,8 +83,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RoomManagementSystem.resx">
-      <DependentUpon>RoomManagementSystem.cs</DependentUpon>
+    <EmbeddedResource Include="RoomManagementPresentationLayer.resx">
+      <DependentUpon>RoomManagementPresentationLayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataLayerInfomation.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

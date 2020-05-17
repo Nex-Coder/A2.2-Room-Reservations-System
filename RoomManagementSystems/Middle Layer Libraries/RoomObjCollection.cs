@@ -10,6 +10,15 @@ using RoomManagementSystem;
 
 namespace RoomManagementSystems
 {
+    /// <summary>
+    /// This Collection is a library with static methods to link the RoomObj object with the Data Layer. 
+    ///  Also, this class is specifically designed for a MySQL server. The server must be able to respond to MySQL queries.
+    ///  <para />
+    /// Connection details can be changed at any time by editing the static field dbconn. 
+    /// To 'currently' view the Data layer and details, please go to https://nexhub.co.uk/phpmyadmin or http://78.47.156.120/78.47.156.120 and use the same connection details as dbconn (Username: roomManager, Password: apipassword). Obviously this won't work if using another server.
+    /// <para />
+    /// Note: Upon actual implementation the dbconn fields should be made close source or should be provided by the Presentation Layer (GUI) to the ChangeDbConnection method. These details are currently easy to access and give access to sensetive infomation once senseitive information is being stored.
+    /// </summary>
     public class RoomObjCollection
     {
         private static MySqlConnection dbconn = new MySqlConnection("SERVER=78.47.156.120;PORT=3306;DATABASE=roomreservations;UID=roomManager;PWD=apipassword;");
@@ -140,6 +149,19 @@ namespace RoomManagementSystems
             {
                 dbconn.Close();                                     // Exception or not, regardless the db connection finally closes.
             }
+        }
+
+        /// <summary>
+        /// Changes the default infomation (unless removed in a future update) of dbconn which holds the database access details of the Data layer.
+        /// </summary>
+        /// <param name="Server">The IP or domain of the MySQL server.</param>
+        /// <param name="Port">The port for the MySQL server. The default should be 3306.</param>
+        /// <param name="Database">Name of the database inside the server.</param>
+        /// <param name="UserID">Login credentials for the user (name)./param>
+        /// <param name="Password">The password/passcode for the user (name).</param>
+        public static void ChangeDBConnection(String Server, String Port, String Database, String UserID, String Password)
+        {
+            dbconn = new MySqlConnection("SERVER="+Server+";PORT="+Port+";DATABASE="+Database+";UID="+UserID+";PWD="+Password+";");
         }
     }
 }
