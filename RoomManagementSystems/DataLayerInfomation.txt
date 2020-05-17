@@ -2,6 +2,6 @@
 
 The default DataLayer is a MySQL server I set up for my team to make it easier for anyone to contribute rather than having to setup an azure database or your own of some kind. Me and Denis already have had a module on Databses being taught MYSQL. He agreed it was better.
 
-To see the internals of the datalayer you can use PhpMyAdmin via https://nexhub.co.uk/phpmyadmin or http://78.47.156.120/78.47.156.120 and use the same connection details as dbconn (Username: roomManager, Password: apipassword).
+To see the internals of the datalayer you can use PhpMyAdmin via https://nexhub.co.uk/phpmyadmin or http://78.47.156.120/phpmyadmin and use the same connection details as dbconn (Username: roomManager, Password: apipassword).
 
 For more infomation please see the above PhpMyAdmin details, the provided documentation or inside the RoomObjCollection class.
